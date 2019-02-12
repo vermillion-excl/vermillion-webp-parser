@@ -90,7 +90,7 @@ namespace Vermillion_WebP_Parser
             {
                 var selItem = lbFiles.Items[0].ToString();
                 Bitmap bmp = new Bitmap(item.ToString());
-                string output = Path.Combine(outputDir, (selItem + ".webp"));
+                string output = Path.Combine(outputDir, (i + ".webp"));
                 using (WebP webp = new WebP())
                     rawWebP = webp.EncodeLossy(bmp, (int)quality_slider.Value, 9, true);
                 File.WriteAllBytes(output, rawWebP);
