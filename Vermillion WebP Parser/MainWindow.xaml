@@ -5,22 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Vermillion_WebP_Parser"
         mc:Ignorable="d"
-        Title="Vermillion WebP Parser" Height="552" Width="324">
+        Title="Vermillion WebP Parser" Height="582" Width="324">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="175*"/>
             <ColumnDefinition Width="141*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="saveBtn" Content="Save WebP" HorizontalAlignment="Left" Margin="1,422,0,0" VerticalAlignment="Top" Width="109" Height="29" Click="SaveBtn_Click" Grid.Column="1"/>
-        <ProgressBar x:Name="progBar" HorizontalAlignment="Left" Height="29" Margin="30,471,0,0" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
+        <Button x:Name="saveBtn" Content="Save WebP" HorizontalAlignment="Left" Margin="1,445,0,0" VerticalAlignment="Top" Width="109" Height="29" Click="SaveBtn_Click" Grid.Column="1"/>
+        <ProgressBar x:Name="progBar" HorizontalAlignment="Left" Height="29" Margin="30,496,0,0" VerticalAlignment="Top" Width="255" Grid.ColumnSpan="2"/>
         <ListBox x:Name="lbFiles" HorizontalAlignment="Left" Height="190" Margin="30,20,0,0" VerticalAlignment="Top" Width="255" MouseDoubleClick="LbFiles_MouseDoubleClick" Grid.ColumnSpan="2"/>
         <Button x:Name="selectBtn" Content="Select Files" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="255" Height="29" Click="SelectBtn_Click" Grid.ColumnSpan="2"/>
         <Slider x:Name="quality_slider" HorizontalAlignment="Left" Margin="30,309,0,0" VerticalAlignment="Top" Width="160" Maximum="100" SmallChange="1" ValueChanged="Slider_ValueChanged" LargeChange="5" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="quality_text" HorizontalAlignment="Left" Margin="30,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" FontSize="14" Height="21" TextDecorations="{x:Null}"><Run Text="Quality Slider"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="quality_display" HorizontalAlignment="Left" Margin="20,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" FontSize="14" Height="21" TextDecorations="{x:Null}" Text="0" Opacity="0.8" Grid.Column="1"/>
-        <Button x:Name="infoBtn" Content="Inspect WebP" HorizontalAlignment="Left" Margin="30,422,0,0" VerticalAlignment="Top" Width="109" Height="29" Click="InfoBtn_Click"/>
-        <RadioButton x:Name="radioLossy" Content="Lossy" HorizontalAlignment="Left" Margin="30,370,0,0" VerticalAlignment="Top" IsChecked="True"/>
-        <RadioButton x:Name="radioLossless" Content="Lossless" HorizontalAlignment="Left" Margin="10,370,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="RadioLossless_Checked" Unchecked="RadioLossless_Unchecked"/>
+        <Button x:Name="infoBtn" Content="Inspect WebP" HorizontalAlignment="Left" Margin="30,445,0,0" VerticalAlignment="Top" Width="109" Height="29" Click="InfoBtn_Click"/>
+        <RadioButton x:Name="radioLossy" Content="Lossy" HorizontalAlignment="Left" Margin="30,410,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="radioLossless" Content="Lossless" HorizontalAlignment="Left" Margin="10,410,0,0" VerticalAlignment="Top" Grid.Column="1" Checked="RadioLossless_Checked" Unchecked="RadioLossless_Unchecked"/>
+        <Slider x:Name="speed_slider" HorizontalAlignment="Left" Margin="30,368,0,0" VerticalAlignment="Top" Width="160" SmallChange="1" Grid.ColumnSpan="2" ValueChanged="Speed_slider_ValueChanged"/>
+        <TextBlock x:Name="speed_text" HorizontalAlignment="Left" Margin="30,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" FontSize="14" Height="21" TextDecorations="{x:Null}"><Run Text="Speed"/><Run Text=" Slider"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="speed_display" HorizontalAlignment="Left" Margin="20,365,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="25" FontSize="14" Height="21" TextDecorations="{x:Null}" Text="0" Opacity="0.8" Grid.Column="1"/>
 
     </Grid>
 </Window>

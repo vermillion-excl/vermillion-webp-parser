@@ -92,7 +92,7 @@ namespace Vermillion_WebP_Parser
                 Bitmap bmp = new Bitmap(item.ToString());
                 string output = Path.Combine(outputDir, (i + ".webp"));
                 using (WebP webp = new WebP())
-                    rawWebP = webp.EncodeLossy(bmp, (int)quality_slider.Value, 9, true);
+                    rawWebP = webp.EncodeLossy(bmp, (int)quality_slider.Value, (int)speed_slider.Value, true);
                 File.WriteAllBytes(output, rawWebP);
                 double curVal = progBar.Value;
                 progBar.Value = (curVal + (100 / itemCount));
@@ -159,6 +159,9 @@ namespace Vermillion_WebP_Parser
             quality_slider.IsEnabled = false;
             quality_display.Opacity = 0.3;
             quality_text.Opacity = 0.3;
+            speed_slider.IsEnabled = false;
+            speed_display.Opacity = 0.3;
+            speed_text.Opacity = 0.3;
         }
 
         private void RadioLossless_Unchecked(object sender, RoutedEventArgs e)
@@ -166,6 +169,14 @@ namespace Vermillion_WebP_Parser
             quality_slider.IsEnabled = true;
             quality_display.Opacity = 1;
             quality_text.Opacity = 1;
+            speed_slider.IsEnabled = true;
+            speed_display.Opacity = 1;
+            speed_text.Opacity = 1;
+        }
+
+        private void Speed_slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            speed_display.Text = speed_slider.Value.ToString();
         }
     }
 }
